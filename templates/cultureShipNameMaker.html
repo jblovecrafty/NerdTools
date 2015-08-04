@@ -1,0 +1,13 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Culture Ship Name Maker...still a work in progress</h1>
+  <form action="" method="post" name="cultureShipNameMaker">
+      <p>
+          New Culture Ship Name:<br>
+          <strong>{{ cultureShipNameResult }}</strong><br>
+      </p>
+      <p><input type="submit" value="Create Another Culture Ship Name"></p>
+  </form>
+{% endblock %}

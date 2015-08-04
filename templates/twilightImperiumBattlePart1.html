@@ -1,0 +1,127 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <h1>Twlight Imperium Battle Part One: Set Up Attacker and Defender</h1>
+  <form action="" method="post" name="twilightImperiumBattleCalculator">
+	{{ form.hidden_tag() }}
+	<h2>Attacker's Forces</h2>
+      <p>
+          Please enter attacker's number of dreadnoughts:<br>
+          {{ form.attackerNumberOfDreadNoughts }}<br>
+      </p>
+      <p>
+          Please enter attacker's dreadnought bonus (if any):<br>
+          {{ form.attackerDreadNoughtBonus }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of carriers:<br>
+          {{ form.attackerNumberOfCarriers }}<br>
+      </p>
+      <p>
+          Please enter attacker's carrier bonus (if any):<br>
+          {{ form.attackerCarrierBonus }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of cruisers:<br>
+          {{ form.attackerNumberOfCruisers }}<br>
+      </p>
+      <p>
+          Please enter attacker's cruiser bonus (if any):<br>
+          {{ form.attackerCruiserBonus }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of destroyers:<br>
+          {{ form.attackerNumberOfDestroyers }}<br>
+      </p>
+      <p>
+          Please enter attacker's destroyer bonus (if any):<br>
+          {{ form.attackerDestroyerBonus }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of war suns:<br>
+          {{ form.attackerNumberOfWarSuns }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of fighters:<br>
+          {{ form.attackerNumberOfFighters }}<br>
+      </p>
+      <p>
+          Please enter attacker's fighter bonus (if any):<br>
+          {{ form.attackerFighterBonus }}<br>
+      </p>
+	<p>
+          Please enter attacker's number of soldiers:<br>
+          {{ form.attackerNumberOfSoldiers }}<br>
+      </p>
+      <p>
+          Please enter attacker's soldier bonus (if any):<br>
+          {{ form.attackerSoldierBonus }}<br>
+      </p>
+	<h2>Defenders's Forces</h2>
+	<p>
+	      Please enter defender's number of PDS:<br>
+	      {{ form.defenderNumberOfPDS }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's PDS bonus (if any):<br>
+	      {{ form.defenderPDSBonus }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's number of dreadnoughts:<br>
+	      {{ form.defenderNumberOfDreadNoughts }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's dreadnought bonus (if any):<br>
+	      {{ form.defenderDreadNoughtBonus }}<br>
+	  </p>
+	<p>
+	      Please enter defender's number of carriers:<br>
+	      {{ form.defenderNumberOfCarriers }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's carrier bonus (if any):<br>
+	      {{ form.defenderCarrierBonus }}<br>
+	  </p>
+	<p>
+	      Please enter defender's number of cruisers:<br>
+	      {{ form.defenderNumberOfCruisers }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's cruiser bonus (if any):<br>
+	      {{ form.defenderCruiserBonus }}<br>
+	  </p>
+	<p>
+          Please enter defender's number of destroyers:<br>
+          {{ form.defenderNumberOfDestroyers }}<br>
+      </p>
+      <p>
+          Please enter defender's destroyer bonus (if any):<br>
+          {{ form.defenderDestroyerBonus }}<br>
+      </p>
+	<p>
+	      Please enter defender's number of war suns:<br>
+	      {{ form.defenderNumberOfWarSuns }}<br>
+	  </p>
+	<p>
+	      Please enter defender's number of fighters:<br>
+	      {{ form.defenderNumberOfFighters }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's fighter bonus (if any):<br>
+	      {{ form.defenderFighterBonus }}<br>
+	  </p>
+	<p>
+	      Please enter defender's number of soldiers:<br>
+	      {{ form.defenderNumberOfSoldiers }}<br>
+	  </p>
+	  <p>
+	      Please enter defender's soldier bonus (if any):<br>
+	      {{ form.defenderSoldierBonus }}<br>
+	  </p>
+      <p><input type="submit" value="Pre Space Battle Roll"></p>
+  </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>What Should I Play?</h1>
+  <form action="" method="post" name="whatShouldIPlay">
+	{{ form.hidden_tag() }}
+      <p>
+          <strong>Play Time Length:</strong><br>
+          {{ form.timeSpanToPlay }}<br>
+      </p>
+      <p>
+          <strong>Theme:</strong><br>
+          {{ form.themeToPlay }}<br>
+      </p>
+	  <p>
+          <strong>Number of Players:</strong><br>
+          {{ form.numberOfPlayer }}<br>
+      </p>
+	  <p>
+          <strong>Game Mechanics:</strong><br>
+          {{ form.gameMechanics }}<br>
+      </p>
+	  <p>
+          <strong>Level of Rules Difficulty:</strong><br>
+          {{ form.levelOfRulesDifficulty }}<br>
+      </p>
+      <p><input type="submit" value="Find a Game"></p>
+  </form>
+{% endblock %}

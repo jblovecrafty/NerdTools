@@ -1,0 +1,17 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Dice Roller Results</h1>
+<table class="table table-striped table-bordered">
+  {% for result in listOfResults %}  
+      <tr>
+		<td><strong>{{ result }}</strong></td>
+      </tr>
+	{% endfor %}
+	<tr>
+		<td>Total Results: <strong>{{ totalResults }}</strong></td>
+	</tr>
+</table>
+<a href="/diceRoller" >Roll More Dice</a>
+{% endblock %}

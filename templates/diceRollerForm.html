@@ -1,0 +1,21 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <h1>Dice Roller</h1>
+  <form action="" method="post" name="diceRollerTask">
+	{{ form.hidden_tag() }}
+      <p>
+          Please select the number of dice:<br>
+          {{ form.numberOfDice }}<br>
+      </p>
+      <p>
+          Please select the type of dice:<br>
+          {{ form.diceType }}<br>
+      </p>
+      <p><input type="submit" value="Roll Dem Dice"></p>
+  </form>
+{% endblock %}

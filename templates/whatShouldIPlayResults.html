@@ -1,0 +1,16 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>What Should I Play Results</h1>
+  <a href="/whatShouldIPlay" >Try Again</a>
+<table class="table table-striped table-bordered">
+  {% for game in listOfGames %}  
+      <tr>
+		<td><img src="/static/img/twilightImperium/{{ game["imageName"]}}" /></td>
+		<td><strong>{{ game["gameTitle"] }}</strong> plays between <strong>{{ game["numberOfPlayersMin"] }} </strong> to <strong>{{ game["numberOfPlayersMax"] }}</strong> people and lasts up to <strong>{{ game["playTimeMax"] }} Minutes</strong></td>
+		<td><strong>Theme:</strong>  {{ game["genre"] }} <strong>Game Mechanic:</strong>  {{ game["gameMechanic"] }} <strong>Rules Difficulty:</strong>  {{ game["rulesDifficulty"] }} <strong>Tags:</strong>  {{ game["searchHashes"] }}</td>
+      </tr>
+	{% endfor %}
+</table>
+{% endblock %}
