@@ -1,0 +1,9 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Twlight Imperium Space Battle Odds Results</h1>
+<p><strong>Your Odds are</strong> {{ odds }} for {{ hits }} Hits</p>
+<p><strong>Your Total Odds of Every Shot Hitting is </strong> {{ totalOdds }}</p>
+<a href="/twilightImperiumSpaceBattleOdds" >Calculate The Odds</a>
+{% endblock %}

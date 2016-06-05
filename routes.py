@@ -4,12 +4,14 @@ from forms import  DiceRollerForm
 from forms import TwilightImperiumBattleCalculator
 from forms import DuneDiceRollerForm
 from forms import WhatShouldIPlay
+from forms import TwilightImperiumSpaceBattleOdds
 
 import twilightImperium
 import whatShouldIPlaySearch
 import wtfFormUtils
 import diceRoller
 import shipName
+import twilightImperiumSpaceBattleOddsCalc
  
 app = Flask(__name__)      
 app.config.from_object('config')
@@ -166,5 +168,32 @@ def whatShouldIPlay():
 		print 'Get'
 		return render_template('whatShouldIPlayForm.html', form = form)
  
+#Can I win a Twilight Imperium Odds Calculator
+#	
+@app.route('/twilightImperiumSpaceBattleOdds', methods=['GET', 'POST'])
+def twilightImperiumSpaceBattleOdds():
+	form = TwilightImperiumSpaceBattleOdds(request.form)
+	if request.method == "POST":
+		#calculate the odds 
+		#
+		odds = twilightImperiumSpaceBattleOddsCalc.calculateBattleOdds(int(form.numberOfDreadNoughts.data),int(form.dreadNoughtBonus.data),
+																		int(form.numberOfWarSuns.data),int(form.warSunBonus.data),
+																		int(form.numberOfCruisers.data),int(form.cruiserBonus.data),
+																		int(form.numberOfCarriers.data),int(form.carrierBonus.data),
+																		int(form.numberOfDestroyers.data),int(form.destroyerBonus.data),
+																		int(form.numberOfFighters.data),int(form.fighterBonus.data), int(form.numberOfHitsNeeded.data))
+		
+		totalOdds = twilightImperiumSpaceBattleOddsCalc.calculateOddsOfAllHitting(int(form.numberOfDreadNoughts.data),int(form.dreadNoughtBonus.data),
+																		int(form.numberOfWarSuns.data),int(form.warSunBonus.data),
+																		int(form.numberOfCruisers.data),int(form.cruiserBonus.data),
+																		int(form.numberOfCarriers.data),int(form.carrierBonus.data),
+																		int(form.numberOfDestroyers.data),int(form.destroyerBonus.data),
+																		int(form.numberOfFighters.data),int(form.fighterBonus.data), int(form.numberOfHitsNeeded.data))
+
+		return render_template('twilightImperiumSpaceBattleOdds.html', odds = odds, hits = form.numberOfHitsNeeded.data, totalOdds = totalOdds )
+	else:
+		print 'Get'
+		return render_template('twilightImperiumSpaceBattleOddsForm.html', form = form)
+
 if __name__ == '__main__':
   app.run(debug=True)

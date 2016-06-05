@@ -113,6 +113,30 @@ class DuneDiceRollerForm(Form):
 	kanlyDiceFreeze = BooleanField('kanlyDiceFreeze', default=False)
 	spiceDiceFreeze = BooleanField('spiceDiceFreeze', default=False)
 	regionDiceFreeze = BooleanField('regionDiceFreeze', default=False)
+
+
+class TwilightImperiumSpaceBattleOdds(Form):
+	#fleet form elements
+	#
+	numberOfDreadNoughts = SelectField(u'Number of Dreadnoughts', choices=[('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')])
+	dreadNoughtBonus = IntegerField('adreadNoughtBonus', validators=[NumberRange(min=0, max=10)], default='0')
+	
+	numberOfCarriers = SelectField(u'Number of Carriers', choices=[('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4')])
+	carrierBonus = IntegerField('carrierBonus', validators=[NumberRange(min=0, max=10)], default='0')
+	
+	numberOfCruisers = SelectField(u'Number of Cruisers', choices=[('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'),('7', '7'), ('8', '8')])
+	cruiserBonus = IntegerField('cruiserBonus', validators=[NumberRange(min=0, max=10)], default='0')
+	
+	numberOfDestroyers= SelectField(u'Number of Destroyers', choices=[('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'),('7', '7'), ('8', '8')])
+	destroyerBonus = IntegerField('destroyerBonus', validators=[NumberRange(min=0, max=10)], default='0')
+	
+	numberOfWarSuns = SelectField(u'Number of WarSuns', choices=[('0', '0'), ('1', '1'), ('2', '2')])
+	warSunBonus = IntegerField('warSunBonus', validators=[NumberRange(min=0, max=10)], default='0')
+	
+	numberOfFighters = IntegerField('attackerNumberOfFighters', validators=[NumberRange(min=0, max=70)], default='0')
+	fighterBonus = IntegerField('fighterBonus', validators=[NumberRange(min=0, max=10)], default='0')
+
+	numberOfHitsNeeded = IntegerField('numberOfHitsNeeded', validators=[NumberRange(min=0, max=30)], default='0')
 	
 	
 	

@@ -1,0 +1,67 @@
+<!-- extend from base layout -->
+{% extends "layout.html" %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <h1>Twlight Imperium What Are My Odds in a Space Battle</h1>
+  <form action="" method="post" name="twilightImperiumBattleCalculator">
+	{{ form.hidden_tag() }}
+	<h2>My Forces</h2>
+      <p>
+          Please enter number of dreadnoughts:<br>
+          {{ form.numberOfDreadNoughts }}<br>
+      </p>
+      <p>
+          Please enter dreadnought bonus (if any):<br>
+          {{ form.dreadNoughtBonus }}<br>
+      </p>
+	<p>
+          Please enter number of carriers:<br>
+          {{ form.numberOfCarriers }}<br>
+      </p>
+      <p>
+          Please enter carrier bonus (if any):<br>
+          {{ form.carrierBonus }}<br>
+      </p>
+	<p>
+          Please enter number of cruisers:<br>
+          {{ form.numberOfCruisers }}<br>
+      </p>
+      <p>
+          Please enter cruiser bonus (if any):<br>
+          {{ form.cruiserBonus }}<br>
+      </p>
+	<p>
+          Please enter number of destroyers:<br>
+          {{ form.numberOfDestroyers }}<br>
+      </p>
+      <p>
+          Please enter destroyer bonus (if any):<br>
+          {{ form.destroyerBonus }}<br>
+      </p>
+	<p>
+          Please enter number of war suns:<br>
+          {{ form.numberOfWarSuns }}<br>
+      </p>
+       <p>
+          Please enter war sun bonus (if any):<br>
+          {{ form.warSunBonus }}<br>
+      </p>
+	<p>
+          Please enter number of fighters:<br>
+          {{ form.numberOfFighters }}<br>
+      </p>
+      <p>
+          Please enter fighter bonus (if any):<br>
+          {{ form.fighterBonus }}<br>
+      </p>
+      <p>
+          Please enter number of hits needed:<br>
+          {{ form.numberOfHitsNeeded }}<br>
+      </p>
+
+      <p><input type="submit" value="Calculate My Odds"></p>
+  </form>
+{% endblock %}
